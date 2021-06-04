@@ -1,0 +1,29 @@
+{
+	"name": "view",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "webpack-cli serve --mode development",
+		"build": "webpack --mode=production"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-loader": "^8.2.2",
+		"filemanager-webpack-plugin": "^5.0.0",
+		"style-loader": "^2.0.0",
+		"url-loader": "^4.1.1",
+		"vue-loader": "15.9.2",
+		"vue-template-compiler": "^2.6.13",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^4.7.0",
+		"webpack-dev-server": "^3.11.2"
+	},
+	"dependencies": {
+		"element-theme-chalk": "^2.15.2",
+		"element-ui": "^2.15.2",
+		"vue": "^2.6.12"
+	}
+}

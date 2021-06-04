@@ -1,0 +1,6 @@
+/target
+.vscode
+*.vst
+view/node_modules
+.DS_Store
+view/dest/bundle.js
