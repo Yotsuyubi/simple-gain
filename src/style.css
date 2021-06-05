@@ -2,4 +2,5 @@ body {
     width: 480px;
     height: 480px;
     touch-action: none;
+    overflow: hidden;
 } 
