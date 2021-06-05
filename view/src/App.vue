@@ -45,6 +45,13 @@ export default {
     document.oncontextmenu = function () {
       return false;
     };
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
   },
   methods: {
     getter: function () {
@@ -68,8 +75,8 @@ export default {
 <style>
 .body {
   width: 480px;
-  height: 500px;
-  background-color: #c8c8c8;
+  height: 480px;
+  background-color: #ffffff;
 }
 
 .box-card {
@@ -77,7 +84,7 @@ export default {
   height: 400px;
   margin-left: 18px;
   margin-right: 18px;
-  background-color: #e4bedf;
+  background-color: #ffffff;
 }
 
 .gain-slider {

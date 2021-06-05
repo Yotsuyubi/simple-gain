@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import Element from 'element-ui'
-import 'element-theme-chalk';
+// import 'element-theme-chalk';
 
 Vue.use(Element)
 

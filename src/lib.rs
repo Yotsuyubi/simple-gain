@@ -15,9 +15,9 @@ fn inline_script(s: &str) -> String {
     format!(r#"<script type="text/javascript">{}</script>"#, s)
 }
 
-// fn inline_style(s: &str) -> String {
-//     format!(r#"<style type="text/css">{}</style>"#, s)
-// }
+fn inline_style(s: &str) -> String {
+    format!(r#"<style type="text/css">{}</style>"#, s)
+}
 
 fn get_html() -> String {
     format!(
@@ -26,14 +26,14 @@ fn get_html() -> String {
         <html>
             <head>
                 <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
                 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
                 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap');
                 </style>
             </head>
-            <body>
+            <body scroll="no">
                 <div id="app"></div>
                 <!--[if lt IE 9]>
                 <div class="ie-upgrade-container">
@@ -44,10 +44,11 @@ fn get_html() -> String {
                 <!--[if gte IE 9 | !IE ]> <!-->
                 {scripts}
                 <![endif]-->
+                {style}
             </body>
         </html>
         "#,
-        // style = inline_style(include_str!("style.css")),
+        style = inline_style(include_str!("style.css")),
         scripts = inline_script(include_str!("bundle.js"))
     )
 }
@@ -197,7 +198,7 @@ impl Plugin for SimpleGain {
         let gui = vst_gui::new_plugin_gui(
             String::from(get_html()),
             self.gui.javascript_callback(),
-            Some((480, 500)),
+            Some((500, 500)),
         );
         Some(Box::new(gui))
     }
